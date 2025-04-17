@@ -39,7 +39,7 @@ after_reboot(){
     sudo mkfs.ext4 -L data /dev/nvme0n1p1 -F
 
     file='/etc/fstab'
-    insert=$'$a\\\n/dev/nvme0n1p1  /data  ext4  umask=0022,gid=100,uid=1000  0  0' 
+    insert=$'$a\\\n/dev/nvme0n1p1  /data  ext4  defaults  0  0' 
     [ -d /data ] || sudo mkdir /data
     sudo sed -i.bak -e "$insert" $file 
     if ! sudo mount -a
