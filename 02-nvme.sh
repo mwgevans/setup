@@ -16,7 +16,7 @@ WantedBy=multi-user.target
 EOF
 SCRIPT_PATH="${BASH_SOURCE}"
 sudo ln -s $SCRIPT_PATH /usr/local/bin/enablenvme.sh
-sudo chmod 744 /usr/local/bin/enablenvme.sh
+sudo chmod 744 $SCRIPT_PATH
 sudo chmod 664 /etc/systemd/system/enablenvme.service
 sudo systemctl daemon-reload
 sudo systemctl enable enablenvme
